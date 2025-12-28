@@ -134,9 +134,15 @@ const Projects = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button variant="outline" className="glow-effect">
-            <Github className="w-4 h-4 mr-2" />
-            View All Projects on GitHub
+          <Button variant="outline" className="glow-effect" asChild>
+            <a 
+              href="https://github.com/safiranaaa?tab=repositories"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Github className="w-4 h-4 mr-2" />
+              View All Projects on GitHub
+            </a>
           </Button>
         </div>
       </div>
