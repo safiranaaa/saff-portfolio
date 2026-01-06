@@ -31,7 +31,7 @@ const Header = () => {
     >
       <a 
         href="/CV_Safira_Nabila_Putri.pdf" 
-        download="Safira_Nabila_Putri_Resume.pdf"
+        download="CV_Safira_Nabila_Putri.pdf"
         className="flex items-center gap-2"
       >
         <Download className="h-4 w-4" />
@@ -39,7 +39,7 @@ const Header = () => {
         </a>
       </Button>
     );
-    
+
   return (
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-6 md:px-36 py-4">
