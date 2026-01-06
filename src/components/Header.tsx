@@ -24,19 +24,22 @@ const Header = () => {
 
   // Helper component to handle the resume download logic
   const ResumeDownload = ({ className }: { className?: string }) => (
-    <a 
-      href="/CV_Safira_Nabila_Putri.pdf" 
-      download="Safira_Nabila_Putri_Resume.pdf"
-      target="_blank"
-      rel="noopener noreferrer"
+    <Button 
+      size="sm" 
+      className={className}
+      asChild
     >
-      <Button variant="outline" size="sm" className={className}>
-        <Download className="w-4 h-4 mr-2" />
+      <a 
+        href="/CV_Safira_Nabila_Putri.pdf" 
+        download="Safira_Nabila_Putri_Resume.pdf"
+        className="flex items-center gap-2"
+      >
+        <Download className="h-4 w-4" />
         Resume
+        </a>
       </Button>
-    </a>
-  );
-
+    );
+    
   return (
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-6 md:px-36 py-4">
