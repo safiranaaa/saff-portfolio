@@ -30,7 +30,7 @@ const Header = () => {
       asChild
     >
       <a 
-        href="/CV_Safira_Nabila_Putri.pdf" 
+        href="/saff-portfolio/CV_Safira_Nabila_Putri.pdf" 
         download="CV_Safira_Nabila_Putri.pdf"
         className="flex items-center gap-2"
       >
