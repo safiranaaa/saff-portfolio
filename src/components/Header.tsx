@@ -7,7 +7,10 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
     setIsMobileMenuOpen(false);
   };
 
@@ -19,10 +22,26 @@ const Header = () => {
     { label: "Contact", id: "contact" },
   ];
 
+  // Helper component to handle the resume download logic
+  const ResumeDownload = ({ className }: { className?: string }) => (
+    <a 
+      href="/CV_Safira_Nabila_Putri.pdf" 
+      download="Safira_Nabila_Putri_Resume.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Button variant="outline" size="sm" className={className}>
+        <Download className="w-4 h-4 mr-2" />
+        Resume
+      </Button>
+    </a>
+  );
+
   return (
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto px-36 py-4">
+      <div className="container mx-auto px-6 md:px-36 py-4">
         <div className="flex items-center justify-between">
+          {/* Logo / Brand Name */}
           <div className="font-mono text-lg font-semibold gradient-text">
             &lt;Safira/&gt;
           </div>
@@ -40,32 +59,29 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Download Resume Button & Theme Toggle */}
+          {/* Desktop Actions: Theme & Resume */}
           <div className="hidden md:flex items-center space-x-4">
             <ThemeToggle />
-            <Button variant="outline" size="sm" className="glow-effect">
-              <Download className="w-4 h-4 mr-2" />
-              Resume
-            </Button>
+            <ResumeDownload className="glow-effect" />
           </div>
 
-          {/* Mobile Menu Button & Theme Toggle */}
+          {/* Mobile Actions: Theme & Menu Toggle */}
           <div className="flex md:hidden items-center gap-2">
             <ThemeToggle />
             <Button
               variant="ghost"
               size="sm"
-              className="md:hidden"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle Menu"
             >
               {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </Button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation Dropdown */}
         {isMobileMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 border-t border-border pt-4">
+          <nav className="md:hidden mt-4 pb-4 border-t border-border pt-4 animate-in fade-in slide-in-from-top-2">
             <div className="flex flex-col space-y-3">
               {navItems.map((item) => (
                 <button
@@ -76,10 +92,9 @@ const Header = () => {
                   {item.label}
                 </button>
               ))}
-              <Button variant="outline" size="sm" className="self-start mt-4 glow-effect">
-                <Download className="w-4 h-4 mr-2" />
-                Resume
-              </Button>
+              <div className="pt-2">
+                <ResumeDownload className="w-full justify-start glow-effect" />
+              </div>
             </div>
           </nav>
         )}
