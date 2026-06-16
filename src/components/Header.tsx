@@ -31,8 +31,8 @@ const Header = () => {
       asChild
     >
       <a 
-        href={`${baseUrl}CV_Safira_Nabila_Putri.pdf`}
-        download="CV_Safira_Nabila_Putri.pdf"
+        href={`${baseUrl}Resume_SafiraNabilaPutri.pdf`}
+        download="Resume_SafiraNabilaPutri.pdf"
         className="flex items-center gap-2"
       >
         <Download className="h-4 w-4" />
