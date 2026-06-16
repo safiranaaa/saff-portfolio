@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Mail, Phone, MapPin, Linkedin, Github, Download, ExternalLink } from "lucide-react";
 
 const Contact = () => {
+  const baseUrl = import.meta.env.BASE_URL;
   const contactInfo = [
     {
       icon: <Mail className="w-5 h-5" />,
@@ -165,16 +166,18 @@ const Contact = () => {
             <Card className="glow-effect bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20 h-full">
               <CardContent className="p-8 text-center space-y-6">
                 <div>
-                  <h3 className="text-xl font-bold mb-2">Ready to Collaborate?</h3>
+                  <h3 className="text-xl font-bold mb-2">Contact</h3>
                   <p className="text-muted-foreground">
                     Download my resume or reach out directly to discuss opportunities
                   </p>
                 </div>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button className="glow-effect">
-                    <Download className="w-4 h-4 mr-2" />
-                    Download Resume
+                  <Button className="glow-effect" asChild>
+                    <a href={`${baseUrl}Resume_SafiraNabilaPutri.pdf`} download="Resume_SafiraNabilaPutri.pdf" className="flex items-center">
+                      <Download className="w-4 h-4 mr-2" />
+                      Download Resume
+                    </a>
                   </Button>
                   <Button variant="outline" asChild className="glow-effect">
                     <a 

@@ -38,8 +38,10 @@ const Hero = () => {
                 Let's Work Together
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="outline" className="glow-effect">
-                View Projects
+              <Button variant="outline" className="glow-effect" asChild>
+                <a href="https://github.com/safiranaaa" target="_blank" rel="noopener noreferrer">
+                  View Projects
+                </a>
               </Button>
             </div>
 
