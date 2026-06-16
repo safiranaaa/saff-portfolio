@@ -1,16 +1,22 @@
 import { Button } from "@/components/ui/button";
 import { Download, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { ThemeToggle } from "./ThemeToggle";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const baseUrl = import.meta.env.BASE_URL;
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // If section doesn't exist on current page, navigate to home with hash
+      navigate(`/#${sectionId}`);
     }
     setIsMobileMenuOpen(false);
   };
