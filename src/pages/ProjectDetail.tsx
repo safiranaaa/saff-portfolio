@@ -2,12 +2,14 @@ import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Github, ExternalLink, Smartphone, Brain, Gamepad2, ShoppingCart, Figma, Calculator } from "lucide-react";
+import { ArrowLeft, Github, ExternalLink, Smartphone, Brain, Gamepad2, ShoppingCart, Figma, Calculator, X } from "lucide-react";
 import Header from "@/components/Header";
+import { useState } from "react";
 
 const ProjectDetail = () => {
   const { slug } = useParams();
   const baseUrl = import.meta.env.BASE_URL;
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const projectsData: Record<string, any> = {
     "guardcare-child-nutritional-status": {
@@ -255,7 +257,11 @@ const ProjectDetail = () => {
               <CardContent className="pt-6">
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {project.mockups.map((mockup: string, index: number) => (
-                    <div key={index} className="bg-muted rounded-lg overflow-hidden flex items-center justify-center p-4">
+                    <div 
+                      key={index} 
+                      className="bg-muted rounded-lg overflow-hidden flex items-center justify-center p-4 cursor-pointer hover:opacity-80 transition-opacity"
+                      onClick={() => setSelectedImage(mockup)}
+                    >
                       <img 
                         src={mockup}
                         alt={`${project.title} mockup ${index + 1}`}
@@ -266,6 +272,31 @@ const ProjectDetail = () => {
                 </div>
               </CardContent>
             </Card>
+          </div>
+        )}
+
+        {/* Image Lightbox Modal */}
+        {selectedImage && (
+          <div 
+            className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
+            onClick={() => setSelectedImage(null)}
+          >
+            <div 
+              className="relative max-w-4xl max-h-[90vh] flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setSelectedImage(null)}
+                className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 rounded-full p-2 transition-colors"
+              >
+                <X className="w-6 h-6 text-white" />
+              </button>
+              <img 
+                src={selectedImage}
+                alt="Full size preview"
+                className="max-w-full max-h-[90vh] object-contain rounded-lg"
+              />
+            </div>
           </div>
         )}
 
