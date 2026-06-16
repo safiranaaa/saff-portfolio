@@ -5,6 +5,7 @@ import { ThemeToggle } from "./ThemeToggle";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const baseUrl = import.meta.env.BASE_URL;
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -30,7 +31,7 @@ const Header = () => {
       asChild
     >
       <a 
-        href="/CV_Safira_Nabila_Putri.pdf" 
+        href={`${baseUrl}CV_Safira_Nabila_Putri.pdf`}
         download="CV_Safira_Nabila_Putri.pdf"
         className="flex items-center gap-2"
       >
