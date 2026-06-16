@@ -27,14 +27,14 @@ const ProjectDetail = () => {
       githubUrl: "https://github.com/safiranaaa/GuardCare-Android-App",
       downloadUrl: "https://s.id/GuardCareApp",
       mockups: [
-        "/assets/projects/guardcare1.png",
-        "/assets/projects/guardcare2.png",
-        "/assets/projects/guardcare3.jpg",
-        "/assets/projects/guardcare4.jpg",
-        "/assets/projects/guardcare5.jpg",
-        "/assets/projects/guardcare6.jpg",
-        "/assets/projects/guardcare7.jpg",
-        "/assets/projects/guardcare8.jpg"
+        "./assets/projects/guardcare1.png",
+        "./assets/projects/guardcare2.png",
+        "./assets/projects/guardcare3.jpg",
+        "./assets/projects/guardcare4.jpg",
+        "./assets/projects/guardcare5.jpg",
+        "./assets/projects/guardcare6.jpg",
+        "./assets/projects/guardcare7.jpg",
+        "./assets/projects/guardcare8.jpg"
       ]
     },
     "mental-health-estimation": {
@@ -55,10 +55,10 @@ const ProjectDetail = () => {
       githubUrl: "https://github.com/safiranaaa/Estimation-of-Mental-Health_MachineLearning",
       liveUrl: "https://estimation-of-mental-health.streamlit.app/",
       mockups: [
-        "/assets/projects/mentalHealth4.png.png",
-        "/assets/projects/mentalHealth3.png.png",
-        "/assets/projects/mentalHealth2.png.png",
-        "/assets/projects/mentalHealth1.png.png"
+        "./assets/projects/mentalHealth4.png.png",
+        "./assets/projects/mentalHealth3.png.png",
+        "./assets/projects/mentalHealth2.png.png",
+        "./assets/projects/mentalHealth1.png.png"
       ]
     },
     "bmr-calculator-android": {
@@ -77,8 +77,8 @@ const ProjectDetail = () => {
       ],
       githubUrl: "https://github.com/safiranaaa/CalculationBMR_Kotlin",
       mockups: [
-        "/assets/projects/bmr1.png",
-        "/assets/projects/bmr2.png"
+        "./assets/projects/bmr1.png",
+        "./assets/projects/bmr2.png"
       ]
     },
     "ecommerce-website": {
@@ -98,8 +98,8 @@ const ProjectDetail = () => {
       ],
       githubUrl: "https://github.com/yourusername/ecommerce-shoe-shop",
       mockups: [
-        "/assets/projects/cantik1.png",
-        "/assets/projects/cantik2.png"
+        "./assets/projects/cantik1.png",
+        "./assets/projects/cantik2.png"
       ]
     },
     "kangen-omah-prototypes": {
@@ -119,14 +119,14 @@ const ProjectDetail = () => {
       ],
       githubUrl: "https://github.com/yourusername/kangen-omah-design",
       mockups: [
-        "/assets/projects/kom1.png",
-        "/assets/projects/kom2.png",
-        "/assets/projects/kom3.png",
-        "/assets/projects/kom4.png",
-        "/assets/projects/kow1.png",
-        "/assets/projects/kow2.png",
-        "/assets/projects/kow3.png",
-        "/assets/projects/kow4.png"
+        "./assets/projects/kom1.png",
+        "./assets/projects/kom2.png",
+        "./assets/projects/kom3.png",
+        "./assets/projects/kom4.png",
+        "./assets/projects/kow1.png",
+        "./assets/projects/kow2.png",
+        "./assets/projects/kow3.png",
+        "./assets/projects/kow4.png"
       ]
     },
     "android-health-tracking": {
@@ -146,11 +146,11 @@ const ProjectDetail = () => {
       ],
       githubUrl: "https://github.com/safiranaaa/HealthTrack_AndroidApp_Kotlin",
       mockups: [
-        "/assets/projects/htrack1.png",
-        "/assets/projects/htrack2.png",
-        "/assets/projects/htrack3.png",
-        "/assets/projects/htrack4.png",
-        "/assets/projects/htrack5.png"
+        "./assets/projects/htrack1.png",
+        "./assets/projects/htrack2.png",
+        "./assets/projects/htrack3.png",
+        "./assets/projects/htrack4.png",
+        "./assets/projects/htrack5.png"
       ]
     }
   };
